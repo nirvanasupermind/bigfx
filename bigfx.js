@@ -13,7 +13,7 @@ const BigFX = (function () {
             } else if (typeof val === "bigint") {
                 this._fromBigInt(val);
             } else if (val instanceof BigFX) {
-                this._fromBigFP(val);
+                this._fromBigFX(val);
             }
         }
 
@@ -30,7 +30,7 @@ const BigFX = (function () {
             this._bigint = val * SCALE_BI;
         }
 
-        _fromBigFP(val) {
+        _fromBigFX(val) {
             this._bigint = val._bigint;
         }
 
