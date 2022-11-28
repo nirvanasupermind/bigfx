@@ -1,0 +1,1 @@
+uglifyjs bigfx.js -o bigfx.min.js -c -m
