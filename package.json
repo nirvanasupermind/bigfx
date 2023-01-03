@@ -1,6 +1,6 @@
 {
   "name": "bigfx",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "`BigFX` is a JavaScript decimal fixed-point number library with unlimited size, built on the native BigInt.",
   "main": "bigfx.js",
   "directories": {

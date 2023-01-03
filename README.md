@@ -1,5 +1,5 @@
 # bigfx
-[![npm version](https://badge.fury.io/js/bigfx)](https://badge.fury.io/js/bigfx)
+[![npm version](https://badge.fury.io/js/bigfx.svg)](https://badge.fury.io/js/bigfx)
 
 `BigFX` is a JavaScript decimal fixed-point number library with unlimited size, based on the native `BigInt`. It supports up to 15 digits of fractional precision, and is internally stored as a `BigInt` scaled by a factor of `1e+15`. `BigFX` can work on both Node.js and the browser.
 
