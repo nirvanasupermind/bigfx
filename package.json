@@ -1,0 +1,23 @@
+{
+  "name": "bigfx",
+  "version": "1.0.0",
+  "description": "`BigFX` is a JavaScript decimal fixed-point number library with unlimited size, built on the native BigInt.",
+  "main": "bigfx.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nirvanasupermind/bigfx.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nirvanasupermind/bigfx/issues"
+  },
+  "homepage": "https://github.com/nirvanasupermind/bigfx#readme"
+}

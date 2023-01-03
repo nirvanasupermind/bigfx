@@ -1,1 +1,1 @@
-uglifyjs bigfx.js -o bigfx.min.js -c -m
+uglifyjs bigfx.js -o bigfx.min.js -c -m --mangle-props regex=/_bigint/

@@ -149,6 +149,31 @@ const BigFX = (function () {
             return this._bigint < other._bigint;
         }
 
+        le(other) {
+            other = new BigFX(other);
+            return this._bigint <= other._bigint;
+        }
+
+        gt(other) {
+            other = new BigFX(other);
+            return this._bigint > other._bigint;
+        }
+
+        ge(other) {
+            other = new BigFX(other);
+            return this._bigint >= other._bigint;
+        }
+
+        eq(other) {
+            other = new BigFX(other);
+            return this._bigint == other._bigint;
+        }
+
+        ne(other) {
+            other = new BigFX(other);
+            return this._bigint != other._bigint;
+        }
+
         toNumber() {
             return Number(this._bigint) / SCALE;
         }
@@ -161,14 +186,13 @@ const BigFX = (function () {
             return this._bigint;
         }
 
-
         toString(radix = 10) {
             if (this._bigint === 0n) {
-                return "0.0";
+                return "0";
             }
 
             if (this._bigint < 0n) {
-                return "-" + this.neg().toRadix(radix);
+                return "-" + this.neg().toString(radix);
             }
 
             const fracPart = (Number(this._bigint % SCALE_BI) / SCALE).toString(radix).slice(2);
@@ -178,11 +202,11 @@ const BigFX = (function () {
 
         toFixed(fractionDigits = 0) {
             if (this._bigint === 0n) {
-                return "0.0";
+                return (0).toFixed(fractionDigits);
             }
 
             if (this._bigint < 0n) {
-                return "-" + this.neg().toRadix(radix);
+                return "-" + this.neg().toFixed(fractionDigits);
             }
 
             const fracPart = (Number(this._bigint % SCALE_BI) / SCALE).toFixed(fractionDigits).slice(2);
@@ -191,6 +215,14 @@ const BigFX = (function () {
         }
 
         toExponential() {
+            if (this._bigint === 0n) {
+                return "0e0";
+            }
+            
+            if (this._bigint < 0n) {
+                return "-" + this.neg().toExponential();
+            }
+
             var mantissa = this.clone();
             var exponent = 0;
 
@@ -204,7 +236,6 @@ const BigFX = (function () {
                 exponent--;
             }
 
-            
             return mantissa.toString() + "e" + exponent;
         }
 
@@ -213,6 +244,9 @@ const BigFX = (function () {
         }
     }
 
+    BigFX.ZERO = new BigFX(0);
+    BigFX.ONE = new BigFX(1);
+    BigFX.TEN = new BigFX(10);
     BigFX.PI = new BigFX(Math.PI);
     BigFX.E = new BigFX(Math.E);
 
